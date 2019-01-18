@@ -1,0 +1,27 @@
+{
+  "name": "wikibot",
+  "version": "1.0.0",
+  "description": "A twitter bot who enjoys misrepresenting Wikipedia",
+  "main": "Tweet_Bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liamsdunn/WikiBot.git"
+  },
+  "keywords": [
+    "Wikibot"
+  ],
+  "author": "Liam Dunn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liamsdunn/WikiBot/issues"
+  },
+  "homepage": "https://github.com/liamsdunn/WikiBot#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "request": "^2.88.0",
+    "twit": "^2.2.11"
+  }
+}
