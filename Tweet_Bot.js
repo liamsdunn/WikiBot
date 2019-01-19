@@ -7,7 +7,7 @@ var fs = require('fs');
 
 // Importing the personal keys to access twitter API
 var keys = fs.readFileSync('./keys.txt', 'utf8').split('\r\n')
-console.log(keys)
+
 // Initilizing our twit object with our imported keys 
 var T = new Twit({
   consumer_key:         keys[0],
