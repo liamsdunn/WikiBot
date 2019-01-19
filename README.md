@@ -24,7 +24,6 @@ OAUTH_TOKEN:
 OAUTH_SECRET:
 CONSUMER_KEY:
 CONSUMER_SECRET:
-TWITTER_HANDLE:
 ```
 This information can be obtained from https://developer.twitter.com/content/developer-twitter/en.html
 
