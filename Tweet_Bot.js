@@ -7,7 +7,7 @@ var fs = require('fs');
 
 // Importing the personal keys to access twitter API
 var keys = fs.readFileSync('./keys.txt', 'utf8').split('\r\n')
-
+console.log(keys)
 // Initilizing our twit object with our imported keys 
 var T = new Twit({
   consumer_key:         keys[0],
@@ -28,6 +28,6 @@ console.log('Tweet Successful')
 async function tweet() {
  	var contents = String(await text.foo());
  	console.log(contents)
-	//T.post('statuses/update', { status: contents }, function(err, data, response) {console.log(data)})
+	T.post('statuses/update', { status: contents }, function(err, data, response) {console.log(data)})
 }
 

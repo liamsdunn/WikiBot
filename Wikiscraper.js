@@ -42,7 +42,8 @@ module.exports = {
     }
 
     var article_url = urls[1].split('=')[1]
-    var result = (await scrape(parse.concat(article_url), extract))[0].replace(new RegExp('(","extract_html"|"extract":")', 'g'), "")
+    var result = await scrape(parse.concat(article_url), extract)
+    var text = result[0].replace(new RegExp('(","extract_html"|"extract":")', 'g'), "")
     var sentence = text.split("\.")
     sentence.pop()
 
