@@ -15,14 +15,12 @@ var extract = /"extract":"[\W\w\d()\s.,;:?-]+,"extract_html"/;
 */
 
 function scrape(url, regex) {
-  var quote;
 
   return new Promise(function(resolve, reject) {
     request(url, function(error, response, body) {
 
       if(response.statusCode == 200){
-        quote = body.match(regex);
-        resolve(quote); 
+        resolve(body.match(regex)); 
 
       } else {
         console.log(url);
@@ -33,8 +31,6 @@ function scrape(url, regex) {
     });
   });
 }
-
-
 
 module.exports = {
   /* 
@@ -62,12 +58,12 @@ module.exports = {
     }
 
     // Splitting the first url, gaining its title. Then redirecting to the new page to then scrape and sanitize its input. 
-    var article_url = urls[1].split('=')[1];
+ 
+    var article_url = urls[Math.floor(Math.random() * urls.length)].split('=')[1];
     var result = await scrape(parse.concat(article_url), extract);
     var text = result[0].replace(new RegExp('(","extract_html"|"extract":"|\n\n)', 'g'), "");
     var sentence = text.split("\.");
     sentence.pop();
-
 
     // Looping continually chosing random numbers until chosen sentence is less then tweet size limit
     var choice;
